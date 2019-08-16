@@ -3,7 +3,7 @@
   "description": "FontAwesome icons for Svelte",
   "version": "0.0.10",
   "license": "MIT",
-  "svelte": "src/index.svelte",
+  "svelte": "main.js",
   "module": "index.mjs",
   "main": "index.js",
   "scripts": {
