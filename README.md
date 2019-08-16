@@ -1,33 +1,57 @@
-*Psst — looking for an app template? Go here --> [sveltejs/template](https://github.com/sveltejs/template)*
+# svelte-fontawesome
 
----
+[`FontAwesome`](https://fontawesome.com/) icons for [`Svelte`](https://svelte.dev/).
 
-# component-template
+Based on [`fa-svelte`](https://github.com/alphapeter/fa-svelte) with a few added options. If you only need to show an icon, that library may be a simpler and better choice.
 
-A base for building shareable Svelte components. Clone it with [degit](https://github.com/Rich-Harris/degit):
+## Getting Started
+
+The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
+
+Add svelte-fontawesome, along with the FontAwesome icon set(s) that you need:
 
 ```bash
-npx degit sveltejs/component-template my-new-component
-cd my-new-component
-npm install # or yarn
+yarn add -D svelte-fontawesome
+yarn add -D @fortawesome/free-solid-svg-icons
 ```
 
-Your component's source code lives in `src/index.html`.
+## Usage
 
-TODO
+```javascript
+<script>
+  import { Icon } from 'svelte-fontawesome';
+  import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+</script>
 
-* [ ] some firm opinions about the best way to test components
-* [ ] update `degit` so that it automates some of the setup work
+<Icon icon={faEnvelope}/>
+```
 
+## Properties
 
-## Setting up
+| prop | type | about |
+| --- | --- | --- |
+| class | string | Add extra classes to the icon |
+| fw | bool | Set the icon to a fixed width |
+| size | string | Set the icon's size to `lg`, `sm` or `xs` |
+| scale | string | Set the icon's scale to `1x`, `2x`, `3x`, etc |
+| stack | string | Set the icon's stack size (see below) |
+| inverse | bool | Set the icon's color to white |
 
-* Run `npm init` (or `yarn init`)
-* Replace this README with your own
+## Stacks
 
+To stack multiple icons, place them within an IconStack. Set the stack property to `1x` for the
+regularly sized icon and `2x` for the larger icon. The inverse property can be used to show the
+smaller icon against the larger one (or vice-versa).
 
-## Consuming components
+```javascript
+<script>
+  import { IconStack, Icon } from 'svelte-fontawesome';
+  import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
+  import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+</script>
 
-Your package.json has a `"svelte"` field pointing to `src/index.html`, which allows Svelte apps to import the source code directly, if they are using a bundler plugin like [rollup-plugin-svelte](https://github.com/rollup/rollup-plugin-svelte) or [svelte-loader](https://github.com/sveltejs/svelte-loader) (where [`resolve.mainFields`](https://webpack.js.org/configuration/resolve/#resolve-mainfields) in your webpack config includes `"svelte"`). **This is recommended.**
-
-For everyone else, `npm run build` will bundle your component's source code into a plain JavaScript module (`index.mjs`) and a UMD script (`index.js`). This will happen automatically when you publish your component to npm, courtesy of the `prepublishOnly` hook in package.json.
+<IconStack>
+  <Icon icon={faCircle} stack="2x" />
+  <Icon icon={faEnvelope} stack="1x" inverse />
+</IconStack>
+```
