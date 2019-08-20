@@ -33,7 +33,6 @@ yarn add -D @fortawesome/free-solid-svg-icons
 | class | string | Add extra classes to the icon |
 | fw | bool | Set the icon to a fixed width |
 | size | string | Set the icon's size to `lg`, `sm` or `xs` |
-| scale | string | Set the icon's scale to `1x`, `2x`, `3x`, etc |
 | stack | string | Set the icon's stack size (see below) |
 | inverse | bool | Set the icon's color to white |
 

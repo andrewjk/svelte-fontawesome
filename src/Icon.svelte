@@ -2,7 +2,6 @@
   export let icon;
   export let fw = false;
   export let size = "";
-  export let scale = "";
   export let stack = "";
   export let inverse = false;
 
@@ -15,8 +14,6 @@
     (stack ? `sfa-stack-${stack} ` : "") +
     (inverse ? "sfa-inverse " : "") +
     ($$props.class ? $$props.class : "");
-
-  $: style = scale ? `font-size: ${scale.replace('x', 'em')}` : null;
 
   $: path = icon.icon[4];
 </script>
@@ -76,7 +73,6 @@
 <svg
   aria-hidden="true"
   class={classes}
-  {style}
   role="img"
   xmlns="http://www.w3.org/2000/svg"
   {viewBox}>
