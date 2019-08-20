@@ -17,7 +17,7 @@ yarn add -D @fortawesome/free-solid-svg-icons
 
 ## Usage
 
-```javascript
+```
 <script>
   import { Icon } from 'svelte-fontawesome';
   import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
@@ -42,7 +42,7 @@ To stack multiple icons, place them within an IconStack. Set the stack property 
 regularly sized icon and `2x` for the larger icon. The inverse property can be used to show the
 smaller icon against the larger one (or vice-versa).
 
-```javascript
+```
 <script>
   import { IconStack, Icon } from 'svelte-fontawesome';
   import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
@@ -53,4 +53,43 @@ smaller icon against the larger one (or vice-versa).
   <Icon icon={faCircle} stack="2x" />
   <Icon icon={faEnvelope} stack="1x" inverse />
 </IconStack>
+```
+
+## Classes
+
+Classes for icon components must be global:
+
+```
+<style>
+  :global(.class1) {
+    color: blue;
+    font-size: 2em;  /* 2em = 2x, 3em = 3x, etc */
+  }
+</style>
+
+<Icon icon={faSearch} class="class1" />
+```
+
+## Transforms
+
+You can use CSS transforms to rotate and flip icons:
+
+```
+<style>
+  :global(.rotate) {
+    transform: rotate(90deg);
+  }
+
+  :global(.flip-v) {
+    transform: scale(1,-1);
+  }
+
+  :global(.flip-h) {
+    transform: scale(-1,1);
+  }
+
+  :global(.flip-both) {
+    transform: scale(-1,-1);
+  }
+</style>
 ```
