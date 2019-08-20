@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "svelte": "main.js",
-  "module": "index.mjs",
-  "main": "index.js",
+  "module": "build/index.mjs",
+  "main": "build/index.js",
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
@@ -26,9 +26,9 @@
     "svelte"
   ],
   "files": [
+    "build",
     "src",
-    "index.mjs",
-    "index.js"
+    "main.js"
   ],
   "ava": {
     "require": [
