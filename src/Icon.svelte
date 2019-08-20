@@ -29,13 +29,13 @@
   /* Fixed width style from https://github.com/FortAwesome/Font-Awesome/blob/master/less/_fixed-width.less */
   .sfa-fw {
     text-align: center;
-    width: (20em / 16);
+    width: 1.25em;
   }
 
   /* Size styles from https://github.com/FortAwesome/Font-Awesome/blob/master/less/_larger.less */
   .sfa-lg {
-    font-size: (4em / 3);
-    line-height: (3em / 4);
+    font-size: 1.3333em;
+    line-height: 0.75em;
     vertical-align: -0.0667em;
   }
 
